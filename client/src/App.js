@@ -27,7 +27,6 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!name || !email) return;
-
     if (editingId) {
       await axios.put(`/api/users/${editingId}`, { name, email });
       setEditingId(null);
